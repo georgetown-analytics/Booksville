@@ -1,10 +1,11 @@
 #Test script to read PostgreSQL data into Python
 
 import psycopg2
+from sklearn.feature_extraction import DictVectorizer
 
 #Test connection to PostgreSQL, returns PostgreSQL version if connection is estabilished
 def connect():
-    """ Connect to the PostgreSQL database server """
+
     conn = None
     try:
 
@@ -15,7 +16,7 @@ def connect():
         # create a cursor
         cur = conn.cursor()
 
- # execute a statement
+        # execute a statement
         print('PostgreSQL database version:')
         cur.execute('SELECT version()')
 
@@ -23,7 +24,7 @@ def connect():
         db_version = cur.fetchone()
         print(db_version)
 
-     # close the communication with the PostgreSQL
+        # close the communication with the PostgreSQL
         cur.close()
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
@@ -34,7 +35,7 @@ def connect():
 
 
 def get_book_details():
-    """ query data from the Keepa table """
+    # query data from the keepa table
     conn = None
     try:
         conn = psycopg2.connect("dbname=Amazon user=postgres password=data")
@@ -53,6 +54,7 @@ def get_book_details():
     finally:
         if conn is not None:
             conn.close()
+
 
 
 if __name__ == '__main__':
