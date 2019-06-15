@@ -7,6 +7,9 @@ The goal of the project is to suggest the third party sellers with an optimal pr
 The main notebooks to focus are "Capstone-Final" and "NoStatsFinalCopy" which explains the step by step process of implementing the algorithms.
 
 Descriptions of the folders:
+
 SQL: SQL dump of the data used in the project.
+
 Presentation: The powerpoint file which gives high level explanation of the project.
+
 CodeWorks: The folder which contains all the code books used in the project.
